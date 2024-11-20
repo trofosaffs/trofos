@@ -1,0 +1,223 @@
+<html>
+
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+<!--==Title==================================-->
+<title>Trofos Name</title>
+
+<!--Stylesheet(CSS)==========================-->
+<link rel="stylesheet" href="css/style.css"/>
+
+<!--==Fav-icon=================================-->
+<link rel="shortcut icon" href="Images/fav-icon.png">
+
+<!--==Import-poppins-font======================-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<!--Import-Rubik-Mono-One-Font===============-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+
+<!--==Using-Font-Awesome=====================-->
+<script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+<!--==Navigation=============================-->
+<nav class="navigation">
+
+    <!--menu-btn---------------------->
+    <input type="checkbox" class="menu-btn" id="menu-btn">
+    <label for="menu-btn" class="menu-icon">
+        <span class="nav-icon"></span>
+    </label>
+
+
+<!--logo------------------------>
+<a href="site.php" class="logo">
+    TROFOS<span></span>
+</a>
+
+    <!--menu-------------------->
+    <ul class="menu">
+        <li><a href="site.php">Home</a></li>
+        <li><a href="todasasseries.html">Serie</a></li>
+        <li><a href="todososfilmes.html">Movies</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+     <!--Search-box------------->
+     <form action="" class="search-box"> 
+        <!--input-->
+        <input type="text" name="search" placeholder="Search Movie" class="search-input" required/>
+        <!--btn-->
+        <button type="submit">
+            <i class="fas fa-search"></i>
+        </button>
+     </form>
+
+</nav>
+<!--nav-end-->
+
+
+<!--==Movie-Banner=================================-->
+<section class="movie-banner">
+
+    <!--==img============================-->
+    <div class="m-banner-img">
+        <img src="Movie-Data/Pirates-of-the-Caribbean-Salazar's-Revenge/cover.jpg" alt="">
+    </div>
+
+    <!--content=====================================-->
+    <div class="banner-container">
+
+        <!--title-container*******************----------->
+        <div class="title-container">
+            <!--title-top==================-->
+            <div class="title-top">
+            <!--title----->
+            <div class="movie-title">
+                <h1>Pirates of the Caribbean Salazar's Revenge</h1>
+            </div>
+            <!--more-about-movie-->
+            <div class="more-about-movie">
+                <span class="quality">Full HD</span>
+                <div class="rating">
+                    8.2 <img src="Images/IMDb-icon.png" alt="imbd">
+                </div>
+                <span>28 August 2017</span>
+                <span>87min</span>
+            </div>
+            <!--language--------->
+            <div class="language">
+                <span>English</span>
+                <span>Portugues</span>
+            </div>
+
+            </div>
+
+
+            <!--Title-bottom============================-->
+            <div class="title-bottom">
+                <!--category---------->
+                <div class="category">
+                    <strong>Category</strong><br/>
+                    <a href="#">Horror</a>,<a href="#">Mistery</a>,<a href="#">Thriller</a>
+                </div>
+                <!--trailer-btn------>
+                <a href="#" class="watch-btn">Watch Trailer</a>
+            </div>
+
+    
+
+
+        </div>
+
+        
+    </div>
+
+</section>
+
+
+    <!--==JS-Swiper=================================-->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!--==jQuery====================================-->
+    <script src="js/jQuery.js"></script>
+
+    
+    
+  <script>
+    /*--menu-btn-fixed-when-scroll======================*/
+    $(window).scroll(function(){
+        if($(document).scrollTop() > 20){
+            $('.navigation').addClass('fix-icon');
+        }
+        else{
+            $('.navigation').removeClass('fix-icon');
+        }
+    });
+
+    /*==popup-open=======================================*/
+    $(document).on('click','.play-btn a',function(){
+        $('.play').addClass('active-popup');
+    })
+    /*==popup-close=======================================*/
+    $(document).on('click','.close-movie',function(){
+        $('.play').removeClass('active-popup');
+    })
+
+  </script>
+  
+
+   <!-----epsodios-e-tempodas----------------->
+   <ul class="accordion-menu">
+      
+    <li>
+   
+        <div class="dropdownlink"><i class="fas fa-play" aria-hidden="true"></i> 1 Temporada
+          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </div>
+       
+        <ul class="submenuItems">
+          <li><a href="https://filmessss.blob.core.windows.net/filmes/PDCAVDSALAZAR2017DUB-BAIXO.mp4">1 episódio</a></li>
+          <li><a href="#">2 episódio</a></li>
+          <li><a href="#">3 episódio</a></li>
+          <li><a href="#">4 episódio</a></li>
+          <li><a href="#">5 episódio</a></li>
+          <li><a href="#">6 episódio</a></li>
+        </ul>
+  
+    </li>
+  
+
+    </ul>
+
+    <script src="js/jquery.js"></script>
+<script type="text/javascript">
+    
+    $(function() {
+    
+      var Accordion = function(el, multiple) {
+        this.el = el || {};
+        // more then one submenu open?
+        this.multiple = multiple || false;
+        
+        var dropdownlink = this.el.find('.dropdownlink');
+        dropdownlink.on('click',
+                        { el: this.el, multiple: this.multiple },
+                        this.dropdown);
+      };
+      
+      Accordion.prototype.dropdown = function(e) {
+        var $el = e.data.el,
+            $this = $(this),
+            //this is the ul.submenuItems
+            $next = $this.next();
+        
+        $next.slideToggle();
+        $this.parent().toggleClass('open');
+        
+        if(!e.data.multiple) {
+          //show only one menu at the same time
+          $el.find('.submenuItems').not($next).slideUp().parent().removeClass('open');
+        }
+      }
+      
+      var accordion = new Accordion($('.accordion-menu'), false);
+    })
+</script>
+
+
+
+</body>
+
+</html>
